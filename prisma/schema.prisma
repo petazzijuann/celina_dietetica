@@ -116,6 +116,16 @@ model Subscriber {
   @@map("subscribers")
 }
 
+model TelegramSession {
+  id         String   @id @default(uuid())
+  chat_id    String   @unique
+  state      String   @default("idle")
+  data       Json     @default("{}")
+  updated_at DateTime @updatedAt
+
+  @@map("telegram_sessions")
+}
+
 model Expense {
   id          String   @id @default(uuid())
   description String
