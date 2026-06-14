@@ -25,7 +25,7 @@ async function getFeaturedProducts(): Promise<ProductPublic[]> {
     tags:          p.tags,
     price_sale:    Number(p.price_sale),
     stock:         p.stock as Record<string, number>,
-    color_variants: p.color_variants as ProductPublic["color_variants"],
+    color_variants: p.color_variants as unknown as ProductPublic["color_variants"],
     is_published:  p.is_published,
     created_at:    p.created_at.toISOString(),
     updated_at:    p.updated_at.toISOString(),
